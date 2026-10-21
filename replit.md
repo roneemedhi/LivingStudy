@@ -1,9 +1,11 @@
-# [Project name]
+# LivingStudy
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+A local-first active-recall study workspace that turns product notes into source-linked prompts and requires manual approval before they enter the verified library.
 
 ## Run & Operate
 
+- `pnpm --filter @workspace/living-study run dev` — run the LivingStudy web app
+- `pnpm --filter @workspace/living-study run typecheck` — typecheck the LivingStudy client
 - `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
 - `pnpm run typecheck` — full typecheck across all packages
 - `pnpm run build` — typecheck + build all packages
@@ -22,15 +24,19 @@ _Replace the heading above with the project's name, and this line with one sente
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `artifacts/living-study/src/App.tsx` — client state, review queue, library, quiz, and settings
+- `artifacts/living-study/src/index.css` — LivingStudy theme and responsive styles
+- LivingStudy currently has no backend; notes and progress are stored in browser LocalStorage
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- Generated prompts remain pending until the user explicitly approves them; discarding removes them from local state.
+- Each prompt retains its source note and exact source sentence. Approval is blocked if that sentence is no longer present or its answer no longer matches the source.
+- The local passphrase is a simulated lock, not account security. Its salted verifier and all study data are in LocalStorage; study data is not encrypted.
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+LivingStudy lets users ingest product-management notes, review sentence-anchored recall prompts, maintain a searchable approved-only library, and practice in flashcard, written-answer, or multiple-choice modes. Quiz progress and appearance preferences persist in the current browser.
 
 ## User preferences
 

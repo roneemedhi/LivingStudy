@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "LivingStudy"
+description = "A private active-recall study app that turns product management notes into source-linked study cards, requires manual review before library approval, and supports searchable self-quizzes with local progress persistence."
+version = "1.0.0"
+id = "artifacts/living-study"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22283
+
+[services.development]
+run = "pnpm --filter @workspace/living-study run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/living-study", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/living-study/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22283"
+BASE_PATH = "/"
