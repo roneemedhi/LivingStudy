@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap');
+@import 'tailwindcss';
+
+:root {
+  --color-primary: #23473e;
+  --color-secondary: #819788;
+  --color-accent: #d77e5f;
+  --color-bg-light: #f3efe3;
+  --color-bg-dark: #173b35;
+  --color-bg-muted: #dce8d8;
+  --color-text-primary: #203c34;
+  --color-text-secondary: #718277;
+  --color-text-muted: #9ca79c;
+  --color-text-inverse: #f4f0e5;
+  --color-success: #85a981;
+  --color-warning: #d89d66;
+  --color-error: #bd6553;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-accent: var(--color-accent);
+  --color-bg-light: var(--color-bg-light);
+  --color-bg-dark: var(--color-bg-dark);
+  --color-bg-muted: var(--color-bg-muted);
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-muted: var(--color-text-muted);
+  --color-text-inverse: var(--color-text-inverse);
+  --color-success: var(--color-success);
+  --color-warning: var(--color-warning);
+  --color-error: var(--color-error);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-bg-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+.video-media-frame {
+  box-sizing: border-box;
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+.video-media-frame > :is(img, video) {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.video-media-frame[data-media-fit='contain'] > :is(img, video) {
+  object-fit: contain;
+}
+
+.video-media-frame[data-media-position='top'] > :is(img, video) {
+  object-position: top;
+}
+
+.video-media-frame[data-media-position='right'] > :is(img, video) {
+  object-position: right;
+}
+
+.video-media-frame[data-media-position='bottom'] > :is(img, video) {
+  object-position: bottom;
+}
+
+.video-media-frame[data-media-position='left'] > :is(img, video) {
+  object-position: left;
+}
+
+.film-scene {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  isolation: isolate;
+}
+.film-grain::after {
+  content: '';
+  position: absolute;
+  z-index: 30;
+  inset: 0;
+  pointer-events: none;
+  opacity: .075;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+}
+.film-kicker {
+  font: 500 2vmin/1.1 var(--font-mono);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.film-headline {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -.055em;
+  line-height: .9;
+}
+.film-caption {
+  margin: 0;
+  font: 500 2.3vmin/1.3 var(--font-body);
+  letter-spacing: .01em;
+}
+.film-rule {
+  height: 1px;
+  background: currentColor;
+  transform-origin: left center;
+}
+.film-paper {
+  background: #f8f5eb;
+  color: #24443a;
+  box-shadow: 0 2.2vmin 5vmin rgba(15, 37, 31, .16);
+}
+.film-mono { font-family: var(--font-mono); }
+.film-outline {
+  color: transparent !important;
+  -webkit-text-stroke: .22vmin var(--outline-color, currentColor);
+}
+.film-card-shadow { box-shadow: 0 2vmin 5vmin rgba(24, 48, 38, .18); }
+
+@keyframes study-drift {
+  0%,100% { transform: translate3d(0,0,0) rotate(0deg); }
+  50% { transform: translate3d(0,-.6vmin,0) rotate(.35deg); }
+}
+@keyframes line-dash { to { stroke-dashoffset: -36; } }

@@ -1,0 +1,29 @@
+kind = "video"
+previewPath = "/livingstudy-film/"
+title = "LivingStudy Film"
+description = "A short animated film introducing LivingStudy, its source-anchored review queue, approved-only study library, and multi-mode recall quizzes."
+version = "1.0.0"
+id = "artifacts/livingstudy-film"
+router = "path"
+videoAspectRatio = "16:9"
+
+[[services]]
+name = "web"
+paths = [ "/livingstudy-film/" ]
+localPort = 23068
+
+[services.development]
+run = "pnpm --filter @workspace/livingstudy-film run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/livingstudy-film", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/livingstudy-film/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23068"
+BASE_PATH = "/livingstudy-film/"
