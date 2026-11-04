@@ -1,0 +1,66 @@
+[
+  {
+    "id": "2ca6fa62-cbac-4f50-9393-a6b447037c94",
+    "position": 1,
+    "filepath": "src/pages/slides/LivingStudy.tsx",
+    "title": "LivingStudy",
+    "description": "Turn product notes into active recall—one source-anchored prompt at a time.",
+    "speakerNotes": ""
+  },
+  {
+    "id": "d48238b4-c2fc-46da-9ec8-aa99e8d5dcd8",
+    "position": 2,
+    "filepath": "src/pages/slides/StartWithYourOwnWords.tsx",
+    "title": "Start with your own words",
+    "description": "Start with your own words",
+    "speakerNotes": ""
+  },
+  {
+    "id": "2f75f086-b481-49a8-85b7-3c0ecda7e8d7",
+    "position": 3,
+    "filepath": "src/pages/slides/KeepEveryPromptGrounded.tsx",
+    "title": "Keep every prompt grounded",
+    "description": "Keep every prompt grounded",
+    "speakerNotes": ""
+  },
+  {
+    "id": "d6ab4d09-8b53-4ef6-871b-47584ca0b568",
+    "position": 4,
+    "filepath": "src/pages/slides/YourReviewIsTheGate.tsx",
+    "title": "Your review is the gate",
+    "description": "Your review is the gate",
+    "speakerNotes": ""
+  },
+  {
+    "id": "6d8cfdc0-7b6f-415b-bb8f-364044d5c484",
+    "position": 5,
+    "filepath": "src/pages/slides/BuildALibraryYouTrust.tsx",
+    "title": "Build a library you trust",
+    "description": "Build a library you trust",
+    "speakerNotes": ""
+  },
+  {
+    "id": "77b84d2e-3010-40d8-8d6a-53db0da2851b",
+    "position": 6,
+    "filepath": "src/pages/slides/PracticeTheWayYouRemember.tsx",
+    "title": "Practice the way you remember",
+    "description": "Practice the way you remember",
+    "speakerNotes": ""
+  },
+  {
+    "id": "9bc7fe23-89c6-4502-a144-93b8104da890",
+    "position": 7,
+    "filepath": "src/pages/slides/YourStudyDataStaysInThisBrowser.tsx",
+    "title": "Your study data stays in this browser",
+    "description": "Your study data stays in this browser",
+    "speakerNotes": ""
+  },
+  {
+    "id": "7e0104aa-4054-43a6-9f89-c1de8a1b42cf",
+    "position": 8,
+    "filepath": "src/pages/slides/AClearBoundaryForPrivateStudy.tsx",
+    "title": "A clear boundary for private study",
+    "description": "A clear boundary for private study",
+    "speakerNotes": ""
+  }
+]

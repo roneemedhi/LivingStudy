@@ -1,0 +1,28 @@
+kind = "slides"
+previewPath = "/livingstudy-overview/"
+title = "LivingStudy Overview"
+description = "An eight-slide overview of LivingStudy’s note capture, source-grounded review queue, verified knowledge library, quiz modes, and local data boundaries."
+version = "1.0.0"
+id = "artifacts/livingstudy-overview"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/livingstudy-overview/" ]
+localPort = 24235
+
+[services.development]
+run = "pnpm --filter @workspace/livingstudy-overview run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/livingstudy-overview", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/livingstudy-overview/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24235"
+BASE_PATH = "/livingstudy-overview/"
